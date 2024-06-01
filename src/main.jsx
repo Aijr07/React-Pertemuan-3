@@ -7,7 +7,9 @@ import Products from "./pages/Products";
 import App from "./App";
 import Orders from "./pages/Orders";
 import Dashboard from "./pages/Dashboard";
-
+import Eror404 from "./pages/404";
+import EditProduct from "./pages/editProduct";
+import AddProduct from "./pages/addProduct";
 const router = createBrowserRouter([
 	{
 		path: "/",
@@ -17,16 +19,36 @@ const router = createBrowserRouter([
 				path: "/",
 				element: <Dashboard />,
 			},
-			{
-				path: "products",
-				element: <Products />,
-			},
+			
 			{
 				path: "orders",
 				element: <Orders />,
 			},
+
+			{
+				path:"products",
+				children:[
+					{
+						path: "",
+						element: <Products />,
+					},
+					{
+                        path:"editProduct/:id",
+                        element:<EditProduct/>
+                    },
+                    {
+                        path:"addProduct",
+                        element:<AddProduct/>
+                    }
+				]
+			}
+			
 		],
 	},
+	{
+        path: "*",
+        element: <Eror404 />,
+    },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

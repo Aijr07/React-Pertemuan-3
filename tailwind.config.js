@@ -33,6 +33,9 @@ export default {
 			fontFamily: {
 				sans: ["Nunito Sans", "sans-serif"],
 			},
+			backgroundImage: {
+				auth:"url(src/assets/authBg.png)"
+			}
 		},
 	},
 	plugins: [],
