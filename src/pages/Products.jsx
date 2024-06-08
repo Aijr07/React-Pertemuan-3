@@ -1,10 +1,19 @@
 import { Link } from "react-router-dom";
 import Button from "../components/UI/Button";
+import useMyHook from "../hooks/useMyHooks";
+import { useEffect } from "react";
+
+// import { useEffect } from "react";
 
 const Products = () => {
+
+	const {data: data, isErr, isLoading} = useMyHook("http://localhost:8080/products")
+
 	return (
 		<>
-			<div className="flex justify-between items-center">
+			{!isErr && !isLoading && (
+				<>
+				<div className="flex justify-between items-center">
 				<p className="text-3xl font-bold">Products</p>
 				<Button>
 					<Link
@@ -27,19 +36,21 @@ const Products = () => {
 						</tr>
 					</thead>
 					<tbody className="table-row-group font-semibold">
-						<tr className="border-borderPrimary border-b">
+						{data && data.map((data) =>(
+							<>
+							<tr key={data.id}  className="border-borderPrimary border-b">
 							<td className="py-6 flex justify-center">
 								<div className="w-14 overflow-hidden rounded-xl">
 									<img
-										src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cmFtZW58ZW58MHx8MHx8fDA%3D"
+										src={data.image}
 										alt=""
 									/>
 								</div>
 							</td>
-							<td>Fried Rice</td>
-							<td>Food</td>
-							<td>Rp25.000</td>
-							<td>10</td>
+							<td>{data.product_name}</td>
+							<td>{data.category}</td>
+							<td>{data.price}</td>
+							<td>{data.stocks}</td>
 							<td className="h-full">
 								<div className="inline-flex rounded-lg font-normal bg-[#FAFBFD] border border-borderPrimary">
 									
@@ -57,154 +68,23 @@ const Products = () => {
 								</div>
 							</td>
 						</tr>
-						<tr className="border-borderPrimary border-b">
-							<td className="py-6 flex justify-center">
-								<div className="w-14 overflow-hidden rounded-xl">
-									<img
-										src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cmFtZW58ZW58MHx8MHx8fDA%3D"
-										alt=""
-									/>
-								</div>
-							</td>
-							<td>Fried Rice</td>
-							<td>Food</td>
-							<td>Rp25.000</td>
-							<td>10</td>
-							<td className="h-full">
-								<div className="inline-flex rounded-lg font-normal bg-[#FAFBFD] border border-borderPrimary">
-									<a
-										href="./editProduct.html"
-										className="py-2 px-4 text-black"
-										aria-label="edit"
-									>
-										<i className="ri-edit-box-line"></i>
-									</a>
-									<div className="w-[1px] border-borderPrimary h-10"></div>
-									<button className="py-2 px-4 text-error" aria-label="delete">
-										<i className="ri-delete-bin-line"></i>
-									</button>
-								</div>
-							</td>
-						</tr>
-						<tr className="border-borderPrimary border-b">
-							<td className="py-6 flex justify-center">
-								<div className="w-14 overflow-hidden rounded-xl">
-									<img
-										src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cmFtZW58ZW58MHx8MHx8fDA%3D"
-										alt=""
-									/>
-								</div>
-							</td>
-							<td>Fried Rice</td>
-							<td>Food</td>
-							<td>Rp25.000</td>
-							<td>10</td>
-							<td className="h-full">
-								<div className="inline-flex rounded-lg font-normal bg-[#FAFBFD] border border-borderPrimary">
-									<a
-										href="./editProduct.html"
-										className="py-2 px-4 text-black"
-										aria-label="edit"
-									>
-										<i className="ri-edit-box-line"></i>
-									</a>
-									<div className="w-[1px] border-borderPrimary h-10"></div>
-									<button className="py-2 px-4 text-error" aria-label="delete">
-										<i className="ri-delete-bin-line"></i>
-									</button>
-								</div>
-							</td>
-						</tr>
-						<tr className="border-borderPrimary border-b">
-							<td className="py-6 flex justify-center">
-								<div className="w-14 overflow-hidden rounded-xl">
-									<img
-										src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cmFtZW58ZW58MHx8MHx8fDA%3D"
-										alt=""
-									/>
-								</div>
-							</td>
-							<td>Fried Rice</td>
-							<td>Food</td>
-							<td>Rp25.000</td>
-							<td>10</td>
-							<td className="h-full">
-								<div className="inline-flex rounded-lg font-normal bg-[#FAFBFD] border border-borderPrimary">
-									<a
-										href="./editProduct.html"
-										className="py-2 px-4 text-black"
-										aria-label="edit"
-									>
-										<i className="ri-edit-box-line"></i>
-									</a>
-									<div className="w-[1px] border-borderPrimary h-10"></div>
-									<button className="py-2 px-4 text-error" aria-label="delete">
-										<i className="ri-delete-bin-line"></i>
-									</button>
-								</div>
-							</td>
-						</tr>
-						<tr className="border border-borderPrimary border-b">
-							<td className="py-6 flex justify-center">
-								<div className="w-14 overflow-hidden rounded-xl">
-									<img
-										src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cmFtZW58ZW58MHx8MHx8fDA%3D"
-										alt=""
-									/>
-								</div>
-							</td>
-							<td>Fried Rice</td>
-							<td>Food</td>
-							<td>Rp25.000</td>
-							<td>10</td>
-							<td className="h-full">
-								<div className="inline-flex rounded-lg font-normal bg-[#FAFBFD] border border-borderPrimary">
-									<a
-										href="./editProduct.html"
-										className="py-2 px-4 text-black"
-										aria-label="edit"
-									>
-										<i className="ri-edit-box-line"></i>
-									</a>
-									<div className="w-[1px] border-borderPrimary h-10"></div>
-									<button className="py-2 px-4 text-error" aria-label="delete">
-										<i className="ri-delete-bin-line"></i>
-									</button>
-								</div>
-							</td>
-						</tr>
-						<tr className="border-borderPrimary border-b">
-							<td className="py-6 flex justify-center">
-								<div className="w-14 overflow-hidden rounded-xl">
-									<img
-										src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cmFtZW58ZW58MHx8MHx8fDA%3D"
-										alt=""
-									/>
-								</div>
-							</td>
-							<td>Fried Rice</td>
-							<td>Food</td>
-							<td>Rp25.000</td>
-							<td>10</td>
-							<td className="h-full">
-								<div className="inline-flex rounded-lg font-normal bg-[#FAFBFD] border border-borderPrimary">
-									<a
-										href="./editProduct.html"
-										className="py-2 px-4 text-black"
-										aria-label="edit"
-									>
-										<i className="ri-edit-box-line"></i>
-									</a>
-									<div className="w-[1px] border-borderPrimary h-10"></div>
-									<button className="py-2 px-4 text-error" aria-label="delete">
-										<i className="ri-delete-bin-line"></i>
-									</button>
-								</div>
-							</td>
-						</tr>
+							</>
+						))}
 					</tbody>
 				</table>
 			</div>
+				</>
+			)}
+			{isLoading && (
+				<div className="w-full h-full flex justify-center items-center">
+				<div className="border-gray-300 h-20 w-20 animate-spin rounded-full border-8 border-t-blue-600" />
+			</div>
+			)}
+			{isErr && (
+				<div className="w-full h-full flex justify-center items-center">
+				<h1 className="text-2xl">Ada Error!</h1>
+			</div>
+			)}
 		</>
 	);
 };

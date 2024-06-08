@@ -1,0 +1,44 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "product_name": "Nasi Goreng",
+            "category": "food",
+            "price": 25000,
+            "stocks": 20,
+            "image": "https://images.unsplash.com/photo-1581184953963-d15972933db1?q=80&w=1565&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        },
+        {
+            "id": 2,
+            "product_name": "Ayam Bakar",
+            "category": "food",
+            "price": 30000,
+            "stocks": 15,
+            "image": "https://images.unsplash.com/photo-1630315500315-43112e2bfd88?q=80&w=1373&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        },
+        {
+            "id": 3,
+            "product_name": "Mie Goreng",
+            "category": "food",
+            "price": 20000,
+            "stocks": 25,
+            "image": "https://images.unsplash.com/photo-1680675494363-75bbf9838a09?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        },
+        {
+            "id": 4,
+            "product_name": "Kopi Latte",
+            "category": "drinks",
+            "price": 15000,
+            "stocks": 30,
+            "image": "https://images.unsplash.com/photo-1550948309-0d8983dbdcc3?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        },
+        {
+            "id": 5,
+            "product_name": "Jus Jeruk",
+            "category": "drinks",
+            "price": 12000,
+            "stocks": 20,
+            "image": "https://plus.unsplash.com/premium_photo-1679075335375-dd2543c9e45f?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        }
+    ]
+}
