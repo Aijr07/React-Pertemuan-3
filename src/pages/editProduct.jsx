@@ -15,7 +15,7 @@ const EditProduct = () => {
 								href=""
 								class="bg-red-500 text-white font-bold h-full text-base w-36 inline-flex py-3 rounded-md justify-center"
 							>
-								<p class="-mb-[2px]">Delete</p>
+								<p class="-mb-[2px]">Hapus</p>
 							</a>
 						</div>
 					</div>
